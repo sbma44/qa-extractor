@@ -6,7 +6,8 @@ var map = require('./lib/map');
 var argv = require('minimist')(process.argv, {
     string: [
         "input",
-        "output"
+        "output",
+        "selector"
     ],
     integer: ["workers"],
     boolean: ["help", "version"],
