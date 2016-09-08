@@ -4,3 +4,13 @@
 [![David DM](https://david-dm.org/ingalls/qa-extractor.svg)](https://david-dm.org/ingalls/qa-extractor)
 
 Extract given features from a OSM-QA-Tiles (https://osmlab.github.io/osm-qa-tiles/)
+
+## Usage Data
+
+```
+./index.js --input=<FILE.mbtiles> --output=<File.mbtiles> --selector=""
+```
+
+## Selector Options
+
+
