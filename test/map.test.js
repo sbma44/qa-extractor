@@ -10,7 +10,8 @@ var tmpOutput = os.tmpdir() + '/output.geojson';
 test('map - basic place filter', function(t) {
     map({
         input: __dirname + '/sg.mbtiles',
-        output: tmpOutput
+        output: tmpOutput,
+        selector: 'building'
     });
 
     t.end();
