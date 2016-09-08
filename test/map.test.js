@@ -21,6 +21,17 @@ function count(t, ct, cb) {
     });
 }
 
+test('map - highway -highway', function(t) {
+    map({
+        input: __dirname + '/sg.mbtiles',
+        output: tmpOutput,
+        selector: 'highway -highway'
+    }, function(parsed) {
+        t.deepEquals(parsed, { '+highway': { '-highway': {} } });
+        count(t, 0);
+    });
+});
+
 test('map - building', function(t) {
     map({
         input: __dirname + '/sg.mbtiles',
@@ -53,3 +64,4 @@ test('map - building "addr:city"', function(t) {
         count(t, 8856);
     });
 });
+
