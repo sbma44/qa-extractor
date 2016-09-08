@@ -1,0 +1,65 @@
+{
+  "name": "qa-extractor",
+  "version": "0.0.1",
+  "description": "Extract given values from QA Tiles",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js lib",
+    "coverage": "istanbul cover tape test/*.js && coveralls < ./coverage/lcov.info",
+    "test": "npm run lint && tape test/*.test.js"
+  },
+  "author": "Nicholas Ingalls <nicholas.ingalls@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "3.3.1",
+    "lodash": "^4.2.0",
+    "minimist": "^1.2.0",
+    "tile-reduce": "3.1.1"
+  },
+  "devDependencies": {
+    "tape": "^4.2.0",
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.4.0"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-use-before-define": [
+        2,
+        "nofunc"
+      ],
+      "space-before-function-paren": [
+        2,
+        "never"
+      ],
+      "space-in-parens": 2,
+      "space-before-blocks": 2,
+      "keyword-spacing": 2,
+      "comma-style": 2,
+      "no-lonely-if": 2,
+      "no-else-return": 0,
+      "new-cap": 0,
+      "no-empty": 2,
+      "no-new": 2,
+      "no-multi-spaces": 0,
+      "space-in-brackets": 0,
+      "brace-style": 0,
+      "quotes": 0,
+      "no-underscore-dangle": 0,
+      "curly": 0,
+      "no-constant-condition": 0,
+      "no-native-reassign": 0,
+      "no-shadow": 0,
+      "key-spacing": 0
+    },
+    "env": {
+      "node": true
+    }
+  },
+  "engines": {
+    "node": "4.2.3"
+  },
+  "repository": {
+    "type": "git"
+  }
+}
+
