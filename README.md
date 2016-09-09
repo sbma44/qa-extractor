@@ -37,7 +37,8 @@ Example: `@id:414317386`
 
 #### `@type`
 
-Search for the type of a feature. Values must be on of `node`, `way`, `area`
+Search for the type of a feature. Values can be one of `node`, `way`, `area` for searching
+OSM types or of `Point`, 'LineString', 'Polygon' for geojson types.
 
 Example: `@type:way`
 
