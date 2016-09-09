@@ -27,6 +27,13 @@ There should be no space between the not operation (`-`) and the next term.
 
 Example: `building highway` (building AND NOT highway)
 
+### `or`
+
+OR is represented with the `|` character.
+
+Example: `highway | building`
+Example: `highway=residential | @type:Point`
+
 ### Metadata Terms
 
 #### `@id`

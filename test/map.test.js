@@ -21,6 +21,39 @@ function count(t, ct, cb) {
     });
 }
 
+test('map - place=neighbourhood | place=hamlet | place=state | place=region', function(t) {
+    map({
+        input: __dirname + '/sg.mbtiles',
+        output: tmpOutput,
+        selector: 'place=neighbourhood | place=hamlet | place=state | place=region'
+    }, function(parsed) {
+        t.deepEquals(parsed, { '+place\x1f=\x1fhamlet': {}, '+place\x1f=\x1fneighbourhood': {}, '+place\x1f=\x1fregion': {}, '+place\x1f=\x1fstate': {} });
+        count(t, 16);
+    });
+});
+
+test('map - @type:Point place | @type:LineString highway', function(t) {
+    map({
+        input: __dirname + '/sg.mbtiles',
+        output: tmpOutput,
+        selector: '@type:Point place | @type:LineString highway'
+    }, function(parsed) {
+        t.deepEquals(parsed, { '+@type\x1f:\x1fPoint': { '+@type\x1f:\x1fLineString': { '+highway': {} }, '+place': {} } });
+        count(t, 39337);
+    });
+});
+
+test('map - @type:Point | @type:LineString', function(t) {
+    map({
+        input: __dirname + '/sg.mbtiles',
+        output: tmpOutput,
+        selector: '@type:Point | @type:LineString'
+    }, function(parsed) {
+        t.deepEquals(parsed, {"+@type\u001f:\u001fPoint":{},"+@type\u001f:\u001fLineString":{}});
+        count(t, 114503);
+    });
+});
+
 test('map - @type:point place', function(t) {
     map({
         input: __dirname + '/sg.mbtiles',
@@ -82,7 +115,7 @@ test('map - building "addr:city"', function(t) {
         output: tmpOutput,
         selector: 'building "addr:city"'
     }, function(parsed) {
-        t.deepEquals(parsed, { '+building': { '+addr:city': { '+': {} } } });
+        t.deepEquals(parsed, { '+building': { '+addr:city': {} } });
         count(t, 8855);
     });
 });
