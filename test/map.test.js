@@ -21,6 +21,17 @@ function count(t, ct, cb) {
     });
 }
 
+test('map - @type:Point | @type:LineString', function(t) {
+    map({
+        input: __dirname + '/sg.mbtiles',
+        output: tmpOutput,
+        selector: '@type:Point | @type:LineString'
+    }, function(parsed) {
+        t.deepEquals(parsed, {"+@type\u001f:\u001fPoint":{},"+@type\u001f:\u001fLineString":{}});
+        count(t, 114503);
+    });
+});
+
 test('map - @type:point place', function(t) {
     map({
         input: __dirname + '/sg.mbtiles',
