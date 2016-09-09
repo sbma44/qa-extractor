@@ -10,6 +10,10 @@
 
 ## Version History
 
+### v1.0.0
+
+- :tada: :white_check_mark: Add support for OR operator
+
 ### v0.1.0
 
 - :tada: Support searching for OSM or GeoJSON types
