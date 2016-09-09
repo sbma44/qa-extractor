@@ -93,7 +93,7 @@ test('map - building "addr:city"', function(t) {
         output: tmpOutput,
         selector: 'building "addr:city"'
     }, function(parsed) {
-        t.deepEquals(parsed, { '+building': { '+addr:city': { '+': {} } } });
+        t.deepEquals(parsed, { '+building': { '+addr:city': {} } });
         count(t, 8855);
     });
 });
