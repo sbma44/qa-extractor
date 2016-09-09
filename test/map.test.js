@@ -21,6 +21,17 @@ function count(t, ct, cb) {
     });
 }
 
+test('map - @type:point place', function(t) {
+    map({
+        input: __dirname + '/sg.mbtiles',
+        output: tmpOutput,
+        selector: '@type:point place'
+    }, function(parsed) {
+        t.deepEquals(parsed, { '+@type\x1f:\x1fpoint': { '+place': {} } });
+        count(t, 945);
+    });
+});
+
 test('map - highway -highway', function(t) {
     map({
         input: __dirname + '/sg.mbtiles',
@@ -31,7 +42,6 @@ test('map - highway -highway', function(t) {
         count(t, 0);
     });
 });
-
 
 test('map - highway name:See', function(t) {
     map({
