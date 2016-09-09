@@ -1,4 +1,5 @@
 var map = require('../lib/map');
+var wrk = require('../lib/worker');
 var test = require('tape');
 var path = require('path');
 var fs = require('fs');
