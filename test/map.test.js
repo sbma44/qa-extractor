@@ -32,6 +32,18 @@ test('map - highway -highway', function(t) {
     });
 });
 
+
+test('map - highway name:See', function(t) {
+    map({
+        input: __dirname + '/sg.mbtiles',
+        output: tmpOutput,
+        selector: 'highway name:See'
+    }, function(parsed) {
+        t.deepEquals(parsed, { '+highway': { '+name\x1f:\x1fSee': {} } });
+        count(t, 7);
+    });
+});
+
 test('map - building', function(t) {
     map({
         input: __dirname + '/sg.mbtiles',
@@ -50,7 +62,7 @@ test('map - building addr', function(t) {
         selector: 'building addr'
     }, function(parsed) {
         t.deepEquals(parsed, {"+building":{"+addr":{}}});
-        count(t, 18746);
+        count(t, 18745);
     });
 });
 
@@ -61,7 +73,6 @@ test('map - building "addr:city"', function(t) {
         selector: 'building "addr:city"'
     }, function(parsed) {
         t.deepEquals(parsed, { '+building': { '+addr:city': { '+': {} } } });
-        count(t, 8856);
+        count(t, 8855);
     });
 });
-
