@@ -10,6 +10,10 @@
 
 ## Version History
 
+### v1.0.1
+
+- :bug: `@type` for GeoJSON types was being determined incorrectly
+
 ### v1.0.0
 
 - :tada: :white_check_mark: Add support for OR operator

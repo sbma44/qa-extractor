@@ -39,7 +39,7 @@ test('map - @type:Point place | @type:LineString highway', function(t) {
         selector: '@type:Point place | @type:LineString highway'
     }, function(parsed) {
         t.deepEquals(parsed, { '+@type\x1f:\x1fPoint': { '+@type\x1f:\x1fLineString': { '+highway': {} }, '+place': {} } });
-        count(t, 39337);
+        count(t, 268);
     });
 });
 
@@ -50,7 +50,7 @@ test('map - @type:Point | @type:LineString', function(t) {
         selector: '@type:Point | @type:LineString'
     }, function(parsed) {
         t.deepEquals(parsed, {"+@type\u001f:\u001fPoint":{},"+@type\u001f:\u001fLineString":{}});
-        count(t, 114503);
+        count(t, 57242);
     });
 });
 
@@ -61,7 +61,7 @@ test('map - @type:point place', function(t) {
         selector: '@type:point place'
     }, function(parsed) {
         t.deepEquals(parsed, { '+@type\x1f:\x1fpoint': { '+place': {} } });
-        count(t, 945);
+        count(t, 268);
     });
 });
 
