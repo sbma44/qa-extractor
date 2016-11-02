@@ -1,6 +1,6 @@
 {
   "name": "qa-extractor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Extract given values from QA Tiles",
   "main": "index.js",
   "scripts": {
